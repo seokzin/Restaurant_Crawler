@@ -5,7 +5,7 @@
 
 
 # v 1.01
-- List_Crawler V 1.01 (Prototype) 구현
+- List_Crawler (Prototype) 구현
 
 #### 문제점
 1. 100개 이상 불러와도 91위 밖에 출력 안됨
@@ -21,7 +21,7 @@
 - 10개 단위로 del arr[i] but IndexError: list assignment index out of range 각오해야함 (무식)
 
 # v 1.02
-- List_Crawler V 1.02 (Prototype) 구현
+- List_Crawler (Prototype) 에러 수정
 
 #### 문제점
 1. short_address 밀림 문제 - 광고가 array에 포함되서 밀림
@@ -32,3 +32,14 @@
     - 해결법 v 1.01와 동일. but 프로토타입 수준이기에 보류
 
 리스트 수집이 본 목적이 아니기에 코딩 보류하고 매장 상세정보 크롤링 계획
+
+# v 1.03
+- Detail_Crawler (Prototype) 구현
+- 매장 정보 추출까지만 구현
+
+#### 문제점
+1. 영업 시간이 정형화 되어있지 않음
+    - 그대로 출력하거나 차선책을 찾아봐야 함
+
+2. 이미지 최대 8개 크롤링
+    - 더 크롤링 원하면 코드 자체 수정 필요
