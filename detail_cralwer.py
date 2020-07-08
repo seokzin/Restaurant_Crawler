@@ -15,7 +15,9 @@ driver.get(url)
 html = driver.page_source
 soup = BeautifulSoup(html) 
 
-title = soup.find("p",attrs={"class":"tit"})
+part = soup.find("div", attrs={"class":"tit-point"})
+title = part.find("p",attrs={"class":"tit"})
+
 address = soup.find("li",attrs={"class":"locat"})
 tel = soup.find("li",attrs={"class":"tel"})
 
@@ -39,3 +41,14 @@ menuprice = part.findAll("p",attrs={"class":"r-txt"})
 #섬네일만 추출함 - 사진 더 필요하면 수정해야함
 part = soup.find("ul", attrs={"class":"store-pic"})
 photo = part.findAll("li", attrs={"class":"btn-gallery-open"})
+
+#데이터 추출부
+print(title.get_text())
+print(address.get_text())
+print(tel.get_text())
+# print(keyword.get_text())
+# print(openday.get_text())
+# print(opentime.get_text())
+# print(menuname.get_text())
+# print(menuprice.get_text())
+# print(photo.get_text())

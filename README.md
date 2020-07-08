@@ -1,10 +1,10 @@
 # Restaurant_Crawler
 - 맛집 사이트 크롤러 (다이닝코드)
 - 2020 한이음
-- 참조 : 블로그 링크
+- 참조 : https://velog.io/@seokzin/series/%EC%9B%B9%ED%81%AC%EB%A1%A4%EB%A7%81
 
 
-# v 1.01
+## v 1.01
 - List_Crawler (Prototype) 구현
 
 #### 문제점
@@ -20,7 +20,7 @@
 - .isdigit()를 통해 str[0]의 T/F 판별
 - 10개 단위로 del arr[i] but IndexError: list assignment index out of range 각오해야함 (무식)
 
-# v 1.02
+## v 1.02
 - List_Crawler (Prototype) 에러 수정
 
 #### 문제점
@@ -33,7 +33,7 @@
 
 리스트 수집이 본 목적이 아니기에 코딩 보류하고 매장 상세정보 크롤링 계획
 
-# v 1.03
+## v 1.03
 - Detail_Crawler (Prototype) 구현
 - 매장 정보 추출까지만 구현
 
@@ -43,3 +43,13 @@
 
 2. 이미지 최대 8개 크롤링
     - 더 크롤링 원하면 코드 자체 수정 필요
+
+## v 1.04
+- List_Crawler를 통해 Top100 맛집 URL 크롤링
+
+#### 문제점
+1. Detail_Crawler FindAll시 tuple 형식으로 저장되는데 이를 출력하기가 어렵
+
+2. 이미지를 URL, IMG파일 어떤 형태로 저장할지 고민
+
+3. 어떤 형태로 크롤링해야 DB 연동이 쉬울지 (백엔드 팀과 논의)

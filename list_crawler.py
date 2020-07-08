@@ -6,7 +6,7 @@ import time
 path = "C:/Users/seokz/Downloads/chromedriver.exe"
 driver = webdriver.Chrome(path)
 
-param = '강남'
+param = '종로'
 url = 'https://www.diningcode.com/list.php?query='+param
 
 #webdriver가 페이지에 접속하도록 명령
@@ -33,12 +33,21 @@ food_kinds = soup.findAll("span", attrs={"class":"stxt"})
 
 long_address = soup.findAll("span", attrs={"class":"ctxt"})
 
-#이상하게 class=ctxt 는 카테고리와 주소가 함께 들어있다. 2칸 간격의 반복문으로 해결
-for line1, line2, line3, line4 in zip(restaurants[1:], food_kinds[1:], long_address[2::2], long_address[3::2]):
-    print(line1.get_text(), end= '/ ')
-    print(line2.get_text(), end= '/ ')
-    print(line3.get_text(), end= '/ ')
-    #주소 겹치는거 해결
-    part_address =  line4.get_text().partition('서울')
-    only_address = part_address[1] + part_address[2]
-    print(only_address)
+# #이상하게 class=ctxt 는 카테고리와 주소가 함께 들어있다. 2칸 간격의 반복문으로 해결
+# for line1, line2, line3, line4 in zip(restaurants[1:], food_kinds[1:], long_address[2::2], long_address[3::2]):
+#     print(line1.get_text(), end= '/ ')
+#     print(line2.get_text(), end= '/ ')
+#     print(line3.get_text(), end= '/ ')
+#     #주소 겹치는거 해결
+#     part_address =  line4.get_text().partition('서울')
+#     only_address = part_address[1] + part_address[2]
+#     print(only_address)
+
+# 본 목적: 상위 100개 URL 크롤링
+url = soup.findAll("a", attrs={"class":"blink"})
+
+for a in soup.find_all('a', attrs={"class":"blink"}, href=True):
+    print('https://www.diningcode.com/'+a['href'])
+
+# 결과에서 광고 URL 중복 10개 제거해주면 상위 100개 추출 가능
+
