@@ -46,9 +46,25 @@ photo = part.findAll("li", attrs={"class":"btn-gallery-open"})
 print(title.get_text())
 print(address.get_text())
 print(tel.get_text())
-# print(keyword.get_text())
-# print(openday.get_text())
-# print(opentime.get_text())
-# print(menuname.get_text())
-# print(menuprice.get_text())
-# print(photo.get_text())
+
+part = soup.find("li", attrs={"class":"tag"})
+for a in part.findAll("span", attrs={"class":"button"}):
+    print(a.get_text())
+
+part = soup.find("div", attrs={"class":"busi-hours"})
+for a in part.findAll("p",attrs={"class":"l-txt"}):
+    print(a.get_text())
+
+for a in part.findAll("p",attrs={"class":"r-txt"}):
+    print(a.get_text())
+
+part = soup.find("div", attrs={"class":"menu-info"})
+for a in part.findAll("p",attrs={"class":"l-txt"}):
+    print(a.get_text())
+
+for a in part.findAll("p",attrs={"class":"r-txt"}):
+    print(a.get_text())
+
+part = soup.find("ul", attrs={"class":"store-pic"})
+for a in part.findAll("img"):
+    print(a['src'])
